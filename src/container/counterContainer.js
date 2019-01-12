@@ -2,6 +2,7 @@ import React from 'react';
 import * as actions from '../actions';
 import { connect } from 'react-redux';
 import Counter from "../components/Counter";
+import {getRandomColor} from '../utils';
 
 
 
@@ -14,7 +15,7 @@ const mapDispatchToProps = (dispatch) => ({
     onIncrement: () => dispatch(actions.increment()),
     onDecrement: () => dispatch(actions.decrement()),
     onSetColor: () => {
-        const color = "black";
+        const color = getRandomColor();
         dispatch(actions.setColor(color))
     }
 });
